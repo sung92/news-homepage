@@ -39,14 +39,24 @@
     }
 
     .primary-navigation {
-        display: none;
+        // display: none; // Por si queremos que aparezca de la nada
         background-color: white;
-        height: 100vh;
-        width: f.rem(250px);
+        // height: 100vh;
+        // width: f.rem(250px);
 
+        // position: fixed;
+        // top: 0;
+        // right: 0;
         position: fixed;
-        top: 0;
-        right: 0;
+        inset: 0 0 0 30%;
+        padding: min(5vh, 2rem) 2em;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .primary-navigation[data-visible] {
+        transform: translateX(0%);
+        // display: block;
     }
 
     .primary-header[data-overlay]::before {
@@ -66,11 +76,6 @@
     .nav-list a {
         font-size: f.rem(20px);
         color: var(--color-verydark-blue);
-    }
-
-    .primary-navigation[data-visible] {
-        clip-path: circle(250% at top right);
-        display: block;
     }
 
     .mobile-nav-toggle {
