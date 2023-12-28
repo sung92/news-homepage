@@ -60,6 +60,12 @@
         margin-top: f.rem(200px);
         display: flex;
         flex-direction: column;
+        gap: f.rem(40px);
+    }
+
+    .nav-list a {
+        font-size: f.rem(20px);
+        color: var(--color-verydark-blue);
     }
 
     .primary-navigation[data-visible] {
