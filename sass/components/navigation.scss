@@ -1,0 +1,93 @@
+@use "../abstracts/functions" as f;
+@use "../abstracts/colors";
+
+.hidden {
+    display: none;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.nav-list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: f.rem(20px);
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--color-darkgrayish-blue);
+    transition: all 0.3s;
+
+    &:hover {
+        color: var(--color-soft-red);
+    }
+}
+
+@media (max-width: 50em) {
+    // Nos aseguramos que el padre esté por encima de cualquier otro elemento
+    .primary-header[data-overlay] {
+        position: relative;
+        z-index: 999;
+    }
+
+    .primary-navigation {
+        display: none;
+        background-color: white;
+        height: 100vh;
+        width: f.rem(250px);
+
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    .primary-header[data-overlay]::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: rgb(0 0 0 /.4) ;
+    }
+
+    .nav-list {
+        margin-top: f.rem(200px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .primary-navigation[data-visible] {
+        clip-path: circle(250% at top right);
+        display: block;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: fixed;
+        right: f.rem(20px);
+        cursor: pointer;
+        background: none;
+        border: 0;
+        padding: 0.5em;
+        z-index: 999;
+
+        width: f.rem(32px);
+        aspect-ratio: 1;
+
+        background-image: url('./assets/images/icon-menu.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url('./assets/images/icon-menu-close.svg');
+    }
+
+}
