@@ -1,4 +1,4 @@
-const bodyOverlay = document.querySelector("body");
+const bodyOverlay = document.body;
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
 
@@ -17,4 +17,10 @@ document.addEventListener('keydown', function(e) {
     if(e.key === 'Escape' && bodyOverlay.classList.contains('scroll-disable')) {
         toggle();
     }
+});
+
+bodyOverlay.addEventListener('click', function(e) {
+   if(e.target.classList.contains("scroll-disable")) {
+    toggle();
+   }
 });
