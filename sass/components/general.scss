@@ -13,7 +13,7 @@
     margin-top: f.rem(35px);
 }
 
-h1 {
+.media__big-title {
     margin-top: f.rem(20px);
     font-size: f.rem(40px);
     font-weight: 800;
@@ -44,7 +44,7 @@ h1 {
     padding: f.rem(20px);
 }
 
-h2 {
+.top-news__main {
     font-size: f.rem(28px);
     color: var(--color-soft-orange);
     margin-bottom: f.rem(5px);
@@ -62,13 +62,13 @@ h2 {
     padding-top: f.rem(20px);
 }
 
-h3 a {
+.top-news__title a {
     font-weight: 700;
     text-decoration: none;
     color: var(--color-off-white);
 }
 
-.head-news-desc {
+.top-news__desc {
     margin-top: f.rem(10px);
     color: var(--color-grayish-blue);
 }
@@ -100,7 +100,7 @@ h3 a {
     color: var(--color-grayish-blue);
 }
 
-h4 a {
+.latest-news a {
     text-decoration: none;
     font-size: f.rem(18px);
     font-weight: 800;
@@ -125,7 +125,7 @@ h4 a {
 
     }
 
-    h1 {
+    .media__big-title {
         font-size: f.rem(52px);
         line-height: f.rem(50px);
         grid-row-start: 2;
@@ -150,11 +150,11 @@ h4 a {
 
     }
 
-    h2 {
+    .top-news {
         font-size: f.rem(36px);
     }
 
-    h3 a {
+    .top-news__title a {
         transition: all 0.3s;
 
         &:hover {
@@ -166,7 +166,7 @@ h4 a {
         flex-direction: row;
     }
 
-    h4 a {
+    .latest-news a {
         transition: all 0.3s;
 
         &:hover {

@@ -32,38 +32,19 @@
 }
 
 @media (max-width: 50em) {
-    // Nos aseguramos que el padre esté por encima de cualquier otro elemento
-    .primary-header[data-overlay] {
-        position: relative;
-        z-index: 999;
-    }
 
     .primary-navigation {
-        // display: none; // Por si queremos que aparezca de la nada
         background-color: white;
-        // height: 100vh;
-        // width: f.rem(250px);
-
-        // position: fixed;
-        // top: 0;
-        // right: 0;
-        position: fixed;
+        position: absolute;
         inset: 0 0 0 30%;
-        padding: min(5vh, 2rem) 2em;
-        transform: translateX(100%);
-        transition: transform 350ms ease-out;
+        display: none;
+        // transform: translateX(100%);
+        // transition: all 350ms ease-in;
     }
 
     .primary-navigation[data-visible] {
-        transform: translateX(0%);
-        // display: block;
-    }
-
-    .primary-header[data-overlay]::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-color: rgb(0 0 0 /.4) ;
+        display: block;
+        // transform: translateX(0%);
     }
 
     .nav-list {
@@ -80,7 +61,7 @@
 
     .mobile-nav-toggle {
         display: block;
-        position: fixed;
+        position: absolute;
         right: f.rem(20px);
         cursor: pointer;
         background: none;

@@ -1,9 +1,20 @@
-const primaryHeader = document.querySelector('.primary-header');
+const bodyOverlay = document.querySelector("body");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
 
-navToggle.addEventListener('click', () => {
+const toggle = function() {
     primaryNav.hasAttribute('data-visible') ? navToggle.setAttribute('aria-expanded', false) : navToggle.setAttribute('aria-expanded', true)
     primaryNav.toggleAttribute('data-visible');
-    primaryHeader.toggleAttribute('data-overlay');
+    bodyOverlay.toggleAttribute('data-overlay');
+    bodyOverlay.classList.toggle('scroll-disable');
+}
+
+navToggle.addEventListener('click', () => {
+    toggle();
+});
+
+document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape' && bodyOverlay.classList.contains('scroll-disable')) {
+        toggle();
+    }
 });
